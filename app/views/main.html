@@ -1,0 +1,79 @@
+<div class="panel panel-primary panel-body">
+  <div ng-controller="PrimeCalculatorCtrl as pctrl">
+    <h3>Ejercicio 1</h3>
+
+    <div class="form-group">
+      <label>Número a probar</label>
+      <input class="form-control" ng-model="numero">
+    </div>
+
+    <button class="btn btn-success" ng-click="primos=pctrl.getPrimes(numero)">probar</button>
+    <br>
+    <label>Resultado:</label>
+    <pre>{{primos}}</pre>
+  </div>
+</div>
+
+<div class="panel panel-primary panel-body">
+  <div ng-controller="PrimeCtrl as p2ctrl">
+    <h3>Ejercicio 2</h3>
+    <form>
+      <div class="form-group">
+        <label>Números a probar</label>
+        <input class="form-control" ng-model="num1" placeholder="N1" required>
+        <input class="form-control" ng-model="num2" placeholder="N2" required>
+        <input class="form-control" ng-model="num3" placeholder="N3" required>
+        <input class="form-control" ng-model="num4" placeholder="N4" required>
+        <input class="form-control" ng-model="num5" placeholder="N5" required>
+      </div>
+
+      <button type="submit" class="btn btn-success" ng-click="primos1=p2ctrl.checkPrime(num1); primos2=p2ctrl.checkPrime(num1,num2); primos3=p2ctrl.checkPrime(num1,num2,num3); primos4=p2ctrl.checkPrime(num1,num2,num3,num4,num5)">probar</button>
+    </form>
+
+    <br>
+    <label>Resultados:</label>
+    <pre>{{primos1}}</pre>
+    <pre>{{primos2}}</pre>
+    <pre>{{primos3}}</pre>
+    <pre>{{primos4}}</pre>
+  </div>
+</div>
+
+<div class="panel panel-primary panel-body">
+  <div ng-controller="BinarySearchTreeValidatorCtrl as p3ctrl">
+    <h3>Ejercicio 3</h3>
+
+    <div class="form-group">
+      <label>Arbol:</label>
+      <pre>{{p3ctrl.nodep | json}}</pre>
+
+   <button  class="btn btn-success" type="button" name="button" ng-click="msg=p3ctrl.checkBST(p3ctrl.nodep)">probar</button>
+
+    <br>
+    <label>Resultado:</label>
+    <pre>{{msg}}</pre>
+  </div>
+</div>
+</div>
+
+
+
+<div class="panel panel-primary panel-body">
+  <div ng-controller="AutocompleteCtrl as p4ctrl">
+    <h3>Ejercicio 4</h3>
+
+    <div class="form-group">
+      <label>text</label>
+      <input list="testList" type="" ng-model="noun" />
+      <datalist id="testList">
+       <option ng-repeat="x in p4ctrl.nouns" value="{{x}}">
+   </datalist>
+
+   <button  class="btn btn-success" type="button" name="button" ng-click="msg=p4ctrl.getSuggestions(noun)">buscar</button>
+    </div>
+
+    <br>
+    <label>Resultado:</label>
+    <pre>{{msg}}</pre>
+  </div>
+</div>
